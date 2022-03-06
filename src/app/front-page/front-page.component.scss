@@ -1,4 +1,189 @@
-div{
-    display: grid;
-    margin: 50px;
+*{
+    //font-family: 'IBM Plex Sans', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.b{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    background-color: cornflowerblue;
+    background-image: url("https://images.pexels.com/photos/7233131/pexels-photo-7233131.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    background-size: cover;
+    justify-content: center;
+    align-content: center;
+
+}
+
+#weather{
+    display: flex;
+    height: 640px;
+    width: 70vw;
+    border-radius: 10px;
+    box-shadow: 5px 10px 30px 3px;
+    margin: 0px;
+    overflow: hidden;
+    z-index: 3;
+    flex-direction: row;
+    
+    background-color: rgba(188, 202, 204, 0.767) ;
+    //opacity: 65%;
+    .panelLeft, .panelRight{
+        
+        height: 100%;
+        
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       // border-style: solid;
+
+
+    }
+
+    $leftwidth: 35%;
+    .panelLeft{
+        width: $leftwidth;
+        padding: 0%;
+
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+
+        text-align: center;
+        color: rgb(73, 73, 73);
+
+        .headGrid{
+            grid-column: span 3;
+            
+            h1{
+                height: fit-content;
+                padding: 20px;
+                font-size: 35px;
+                font-weight: 1000;
+                letter-spacing: 1.5px;
+                
+
+                justify-content: center;
+                align-content: center;
+            }
+        }
+        .formGrid{
+            grid-row-start: 2;
+            grid-row-end: 2;
+            grid-column: span 3;
+
+            .w-form{
+               // border-style: solid;
+                padding: 10px;
+                .form-control{
+                    color: #4b5166;
+                    background: #F7F8F9;
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    height: 20px;
+                    min-width: 50%;
+                    max-width: 93.9%;
+
+                    border-radius: 5px;
+                    border: 2px solid #F2F5F6;
+                    box-shadow: none;
+                    
+                    
+                }
+                .form-control::placeholder{
+                    color: #112a7e;
+                }
+                .form-control:focus{
+                    border-color: rgba(26, 174, 243, 0.541);
+                    box-shadow: none;
+                }
+    
+                .form-select{
+                    width: 55%;
+                    padding: 5px 25px;
+                    // position: relative;
+                }
+                .btn{
+                    padding: 8.5px 8.5px;
+                }
+
+            }
+            
+        }
+        .iconCurrentWeather{
+            grid-row-start: 3;
+            grid-row-end: 3;
+            grid-column: span 3;
+            .cityName{
+                font-size: 30px;
+                font-weight: 600;
+                height: fit-content;
+            }
+            .description{
+                height: fit-content;
+                font-style: italic;
+                font-size: 25px;
+                font-weight: 500;
+            }
+            img{
+                height: 50%;
+            }
+
+        }
+        .details{
+            grid-row-start: 4;
+            grid-row-end: 4;
+            width: 100%;
+
+            font-size: 16px;
+            font-weight: 550;
+            svg{
+                height: 60%;
+            }
+        }
+        
+        
+    }
+    .panelRight{
+        width:calc(100% - $leftwidth);
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-auto-flow: column;
+        color: rgb(73, 73, 73);
+        border-left: 3px solid rgba(54, 54, 54, 0.658);
+        padding: 58px;
+        h1{
+            grid-column: span 4;
+            height: fit-content;
+            margin: 0px;
+
+            font-size: 35px;
+        }
+        .table{
+            grid-row: span 5;
+            display: table;
+            height: 100%;
+            width: fit-content;
+            margin: 0px;
+            //border: 1px solid grey;
+            border-collapse: collapse;
+            
+            
+            justify-content: center;
+            align-content: center;
+            tr {
+                line-height: 40px;
+                vertical-align: middle;
+                text-align: center;
+            }   
+        }
+    }
+}
+

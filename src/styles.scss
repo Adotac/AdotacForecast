@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    overflow-x: hidden;
+}
